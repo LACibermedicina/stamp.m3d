@@ -1,0 +1,21 @@
+[Unit]
+Description=VSI Platform (M3D Stamp)
+After=network.target
+
+[Service]
+Type=simple
+User=vsi
+Group=vsi
+WorkingDirectory=/opt/vsi_platform
+ExecStart=/opt/vsi_platform/venv/bin/python /opt/vsi_platform/vsi_server.py --host 127.0.0.1 --port 8080 --data /var/lib/vsi
+Restart=on-failure
+RestartSec=3
+# Endurecimento básico
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=full
+ProtectHome=true
+ReadWritePaths=/var/lib/vsi
+
+[Install]
+WantedBy=multi-user.target

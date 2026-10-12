@@ -1,0 +1,5 @@
+# Opcional: só necessário para PROCESSAR vídeos e ler selos em arquivos.
+# O servidor, o banco SQLite, usuários, convites e o registro funcionam sem isto.
+opencv-python-headless
+numpy
+# Também é preciso o programa ffmpeg (inclui ffprobe) instalado no sistema.
